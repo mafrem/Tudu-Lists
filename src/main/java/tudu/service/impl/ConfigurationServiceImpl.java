@@ -18,10 +18,8 @@ import tudu.service.ConfigurationService;
 import tudu.service.UserAlreadyExistsException;
 import tudu.service.UserService;
 
-import javax.annotation.PostConstruct;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.validation.Constraint;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import java.util.Set;
@@ -50,7 +48,6 @@ public class ConfigurationServiceImpl implements ConfigurationService {
     @Autowired
     private PlatformTransactionManager transactionManager;
 
-    @PostConstruct
     public void init() {
         log.warn("Initializing Tudu Lists");
         TransactionTemplate transactionTemplate = new TransactionTemplate(transactionManager);
